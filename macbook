@@ -1,0 +1,11 @@
+set -eu
+
+SOURCE="${1}"
+RESULT="${2}"
+TEMPLATE="$(dirname "${0}")/templates/macbook.png"
+
+exec composite \
+	\( "${SOURCE}" -resize 563x \) \
+	-geometry +20+26 \
+	"${TEMPLATE}" \
+	"${RESULT}"

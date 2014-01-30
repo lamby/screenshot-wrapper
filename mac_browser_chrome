@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -eu
+
+SOURCE="${1}"
+RESULT="${2}"
+TEMPLATE="$(dirname "${0}")/templates/mac_browser_chrome.png"
+
+exec composite \
+	\( "${SOURCE}" -resize 662^x292 \) \
+	-geometry +1+40 \
+	"${TEMPLATE}" \
+	"${RESULT}"
